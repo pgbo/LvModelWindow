@@ -10,9 +10,9 @@
 Pod::Spec.new do |s|
   s.name             = "LvModelWindow"
   s.version          = "0.1.0"
-  s.summary          = "A short description of LvModelWindow."
+  s.summary          = "LvModelWindow是一个弹出视图的wrapper Window，通过往它里面添加你想要的视图实现自定义，支持StatusBar隐藏，支持屏幕旋转"
   s.description      = <<-DESC
-                       弹出视图的Window，可以往window中添加任何视图，支持StatusBar隐藏，支持屏幕旋转
+                       通过LvModelWindow能够轻易实现任意弹出视图，将你想要弹出的视图add到它的windowRootView里，通过modelWindowDelegate设置好show和dismiss细节，即可构建弹出视图
                        DESC
   s.homepage         = "https://github.com/pgbo/LvModelWindow"
   s.license          = 'MIT'
