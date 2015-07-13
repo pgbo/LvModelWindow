@@ -12,17 +12,13 @@ Pod::Spec.new do |s|
   s.version          = "0.1.0"
   s.summary          = "A short description of LvModelWindow."
   s.description      = <<-DESC
-                       An optional longer description of LvModelWindow
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       弹出视图的Window，可以往window中添加任何视图，支持StatusBar隐藏，支持屏幕旋转
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/LvModelWindow"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/pgbo/LvModelWindow"
   s.license          = 'MIT'
   s.author           = { "pgbo" => "460667915@qq.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/LvModelWindow.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/pgbo/LvModelWindow.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://github.com/pgbo'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
@@ -32,7 +28,6 @@ Pod::Spec.new do |s|
     'LvModelWindow' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.public_header_files = 'Pod/Classes/**/*.h'
+  s.frameworks = 'UIKit'
 end

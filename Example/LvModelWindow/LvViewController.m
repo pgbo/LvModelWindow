@@ -7,8 +7,11 @@
 //
 
 #import "LvViewController.h"
+#import <LvModelWindow/LvModelWindow.h>
 
-@interface LvViewController ()
+@interface LvViewController () <LvModelWindowDelegate>
+
+@property (nonatomic) LvModelWindow *modelWindow;
 
 @end
 
@@ -17,7 +20,40 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.view.userInteractionEnabled = YES;
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewTap:)]];
+}
+
+- (void)viewTap:(UITapGestureRecognizer *)tap
+{
+    [self.modelWindow showWithAnimated:YES];
+}
+
+- (LvModelWindow *)modelWindow
+{
+    if (!_modelWindow) {
+        _modelWindow = [[LvModelWindow alloc]initWithPreferStatusBarHidden:YES supportedOrientationPortrait:NO supportedOrientationPortraitUpsideDown:NO supportedOrientationLandscapeLeft:NO supportedOrientationLandscapeRight:NO];
+        _modelWindow.modelWindowDelegate = self;
+        
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 100, CGRectGetWidth(self.view.bounds), 64)];
+        [_modelWindow.windowRootView addSubview:label];
+        _modelWindow.windowRootView.backgroundColor = [UIColor blackColor];
+        
+        label.text = @"😄我显示出来了, 再点我就会消失";
+        label.backgroundColor = [UIColor whiteColor];
+        label.textColor = [UIColor blackColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        
+        label.userInteractionEnabled = YES;
+        [label addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissModelWindow)]];
+    }
+    return _modelWindow;
+}
+
+- (void)dismissModelWindow
+{
+    [_modelWindow dismissWithAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning
