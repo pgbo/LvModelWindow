@@ -10,13 +10,15 @@
 
 @interface LvModelWindowRootVC : UIViewController
 
-@property (nonatomic, readonly) BOOL customePrefersStatusBarHidden;
+@property (nonatomic, readonly) BOOL customPrefersStatusBarHidden;
+@property (nonatomic, readonly) UIStatusBarStyle customPreferStatusBarStyle;
 @property (nonatomic, readonly) BOOL supportedOrientationPortrait;
 @property (nonatomic, readonly) BOOL supportedOrientationPortraitUpsideDown;
 @property (nonatomic, readonly) BOOL supportedOrientationLandscapeLeft;
 @property (nonatomic, readonly) BOOL supportedOrientationLandscapeRight;
 
 - (instancetype)initWithPrefersStatusBarHidden:(BOOL)prefersStatusBarHidden
+                          preferStatusBarStyle:(UIStatusBarStyle)preferStatusBarStyle
                   supportedOrientationPortrait:(BOOL)supportedOrientationPortrait
         supportedOrientationPortraitUpsideDown:(BOOL)supportedOrientationPortraitUpsideDown
              supportedOrientationLandscapeLeft:(BOOL)supportedOrientationLandscapeLeft
@@ -27,13 +29,15 @@
 @implementation LvModelWindowRootVC
 
 - (instancetype)initWithPrefersStatusBarHidden:(BOOL)prefersStatusBarHidden
+                          preferStatusBarStyle:(UIStatusBarStyle)preferStatusBarStyle
                   supportedOrientationPortrait:(BOOL)supportedOrientationPortrait
         supportedOrientationPortraitUpsideDown:(BOOL)supportedOrientationPortraitUpsideDown
              supportedOrientationLandscapeLeft:(BOOL)supportedOrientationLandscapeLeft
             supportedOrientationLandscapeRight:(BOOL)supportedOrientationLandscapeRight
 {
     if (self = [super init]) {
-        _customePrefersStatusBarHidden = prefersStatusBarHidden;
+        _customPrefersStatusBarHidden = prefersStatusBarHidden;
+        _customPreferStatusBarStyle = preferStatusBarStyle;
         _supportedOrientationPortrait = supportedOrientationPortrait;
         _supportedOrientationPortraitUpsideDown = supportedOrientationPortraitUpsideDown;
         _supportedOrientationLandscapeLeft = supportedOrientationLandscapeLeft;
@@ -51,41 +55,21 @@
 #ifdef __IPHONE_7_0
 - (BOOL)prefersStatusBarHidden
 {
-    return _customePrefersStatusBarHidden;
+    return _customPrefersStatusBarHidden;
 }
-#endif
 
-#ifndef __IPHONE_6_0
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+- (UIStatusBarStyle)preferredStatusBarStyle
 {
-    BOOL result = NO;
-    switch (toInterfaceOrientation) {
-        case UIInterfaceOrientationPortrait:
-            result = _supportedOrientationPortrait;
-            break;
-        case UIInterfaceOrientationPortraitUpsideDown:
-            result = _supportedOrientationPortraitUpsideDown;
-            break;
-        case UIInterfaceOrientationLandscapeLeft:
-            result = _supportedOrientationLandscapeLeft;
-            break;
-        case UIInterfaceOrientationLandscapeRight:
-            result = _supportedOrientationLandscapeRight;
-            break;
-        default:
-            break;
-    }
-    return result;
+    return _customPreferStatusBarStyle;
 }
 #endif
 
-#ifdef __IPHONE_6_0
 - (BOOL)shouldAutorotate
 {
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     UIInterfaceOrientationMask mask = 0;
     if (_supportedOrientationPortrait) {
@@ -118,7 +102,6 @@
     
     return mask;
 }
-#endif
 
 @end
 
@@ -135,6 +118,7 @@
 - (instancetype)init
 {
     return [self initWithPreferStatusBarHidden:NO
+                          preferStatusBarStyle:UIStatusBarStyleDefault
                   supportedOrientationPortrait:YES
         supportedOrientationPortraitUpsideDown:YES
              supportedOrientationLandscapeLeft:YES
@@ -142,6 +126,7 @@
 }
 
 - (instancetype)initWithPreferStatusBarHidden:(BOOL)preferStatusBarHidden
+                         preferStatusBarStyle:(UIStatusBarStyle)preferStatusBarStyle
                  supportedOrientationPortrait:(BOOL)supportedOrientationPortrait
        supportedOrientationPortraitUpsideDown:(BOOL)supportedOrientationPortraitUpsideDown
             supportedOrientationLandscapeLeft:(BOOL)supportedOrientationLandscapeLeft
@@ -149,6 +134,7 @@
 {
     if (self = [super init]) {
         _preferStatusBarHidden = preferStatusBarHidden;
+        _preferStatusBarStyle = preferStatusBarStyle;
         _supportedOrientationPortrait = supportedOrientationPortrait;
         _supportedOrientationPortraitUpsideDown = supportedOrientationPortraitUpsideDown;
         _supportedOrientationLandscapeLeft = supportedOrientationLandscapeLeft;
@@ -164,12 +150,22 @@
     _window.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     
     _windowRootVC = [[LvModelWindowRootVC alloc]initWithPrefersStatusBarHidden:_preferStatusBarHidden
+                                                          preferStatusBarStyle:_preferStatusBarStyle
                                                   supportedOrientationPortrait:_supportedOrientationPortrait
                                         supportedOrientationPortraitUpsideDown:_supportedOrientationPortraitUpsideDown
                                              supportedOrientationLandscapeLeft:_supportedOrientationLandscapeLeft
                                             supportedOrientationLandscapeRight:_supportedOrientationLandscapeRight];
     _window.rootViewController = _windowRootVC;
-    _windowRootView = _windowRootVC.view;
+}
+
+- (UIView *)windowRootView
+{
+    return _windowRootVC.view;
+}
+
+- (UIViewController *)windowRootViewCcontroller
+{
+    return _windowRootVC;
 }
 
 

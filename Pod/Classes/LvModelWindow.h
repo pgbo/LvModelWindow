@@ -40,8 +40,10 @@
  *  需要自定义的视图可以添加到windowRootView中
  */
 @property (nonatomic, readonly) UIView *windowRootView;
+@property (nonatomic, readonly) UIViewController *windowRootViewCcontroller;
 
 @property (nonatomic, readonly) BOOL preferStatusBarHidden;
+@property (nonatomic, readonly) UIStatusBarStyle preferStatusBarStyle;
 @property (nonatomic, readonly) BOOL supportedOrientationPortrait;
 @property (nonatomic, readonly) BOOL supportedOrientationPortraitUpsideDown;
 @property (nonatomic, readonly) BOOL supportedOrientationLandscapeLeft;
@@ -55,6 +57,7 @@
 @property (nonatomic, weak) id<LvModelWindowDelegate> modelWindowDelegate;
 
 - (instancetype)initWithPreferStatusBarHidden:(BOOL)preferStatusBarHidden
+                         preferStatusBarStyle:(UIStatusBarStyle)preferStatusBarStyle
                  supportedOrientationPortrait:(BOOL)supportedOrientationPortrait
        supportedOrientationPortraitUpsideDown:(BOOL)supportedOrientationPortraitUpsideDown
             supportedOrientationLandscapeLeft:(BOOL)supportedOrientationLandscapeLeft

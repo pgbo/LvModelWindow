@@ -33,7 +33,7 @@
 - (LvModelWindow *)modelWindow
 {
     if (!_modelWindow) {
-        _modelWindow = [[LvModelWindow alloc]initWithPreferStatusBarHidden:YES supportedOrientationPortrait:NO supportedOrientationPortraitUpsideDown:NO supportedOrientationLandscapeLeft:NO supportedOrientationLandscapeRight:NO];
+        _modelWindow = [[LvModelWindow alloc]initWithPreferStatusBarHidden:YES preferStatusBarStyle:UIStatusBarStyleDefault supportedOrientationPortrait:NO supportedOrientationPortraitUpsideDown:NO supportedOrientationLandscapeLeft:NO supportedOrientationLandscapeRight:NO];
         _modelWindow.modelWindowDelegate = self;
         
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 100, CGRectGetWidth(self.view.bounds), 64)];
