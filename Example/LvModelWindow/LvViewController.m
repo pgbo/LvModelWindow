@@ -8,10 +8,12 @@
 
 #import "LvViewController.h"
 #import <LvModelWindow/LvModelWindow.h>
+#import "DefaultModelWindowAnimation.h"
 
 @interface LvViewController () <LvModelWindowDelegate>
 
 @property (nonatomic) LvModelWindow *modelWindow;
+@property (nonatomic) id<LvModelWindowAnimating> modelWindowAnimation;
 
 @end
 
@@ -33,7 +35,7 @@
 - (LvModelWindow *)modelWindow
 {
     if (!_modelWindow) {
-        _modelWindow = [[LvModelWindow alloc]initWithPreferStatusBarHidden:YES preferStatusBarStyle:UIStatusBarStyleDefault supportedOrientationPortrait:NO supportedOrientationPortraitUpsideDown:NO supportedOrientationLandscapeLeft:NO supportedOrientationLandscapeRight:NO];
+        _modelWindow = [[LvModelWindow alloc]initWithPreferStatusBarHidden:NO preferStatusBarStyle:UIStatusBarStyleLightContent supportedOrientationPortrait:NO supportedOrientationPortraitUpsideDown:NO supportedOrientationLandscapeLeft:NO supportedOrientationLandscapeRight:NO];
         _modelWindow.modelWindowDelegate = self;
         
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 100, CGRectGetWidth(self.view.bounds), 64)];
@@ -47,6 +49,15 @@
         
         label.userInteractionEnabled = YES;
         [label addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissModelWindow)]];
+        
+        _modelWindowAnimation = ({
+            DefaultModelWindowAnimation *animation = [[DefaultModelWindowAnimation alloc]init];
+            animation.touchBackgroudView = _modelWindow.windowRootView;
+            animation.contentView = label;
+            animation;
+        });
+        
+        _modelWindow.modelWindowAnimation = _modelWindowAnimation;
     }
     return _modelWindow;
 }

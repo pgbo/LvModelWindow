@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "LvModelWindowAnimating.h"
+
 @class LvModelWindow;
 @protocol LvModelWindowDelegate <NSObject>
 
@@ -16,18 +18,6 @@
 
 @optional
 - (void)modelWindowDidDismiss:(LvModelWindow *)modelWindow;
-
-@optional
-- (void(^)())showAnimations:(LvModelWindow *)modelWindow;
-
-@optional
-- (void(^)())showCompletion:(LvModelWindow *)modelWindow;
-
-@optional
-- (void(^)())dismissAnimations:(LvModelWindow *)modelWindow;
-
-@optional
-- (void(^)())dismissCompletion:(LvModelWindow *)modelWindow;
 
 @end
 
@@ -56,6 +46,11 @@
 
 @property (nonatomic, weak) id<LvModelWindowDelegate> modelWindowDelegate;
 
+/**
+ *  指定动画
+ */
+@property (nonatomic, weak) id<LvModelWindowAnimating> modelWindowAnimation;
+
 - (instancetype)initWithPreferStatusBarHidden:(BOOL)preferStatusBarHidden
                          preferStatusBarStyle:(UIStatusBarStyle)preferStatusBarStyle
                  supportedOrientationPortrait:(BOOL)supportedOrientationPortrait
@@ -65,11 +60,13 @@
 
 /**
  *  显示
+ *  @param animated 是否动画，如果`animated`为`YES`, 且存在`modelWindowAnimation`，那么会使用动画
  */
 - (void)showWithAnimated:(BOOL)animated;
 
 /**
  *  消失
+ *  @param animated 是否动画，如果`animated`为`YES`, 且存在`modelWindowAnimation`，那么会使用动画
  */
 - (void)dismissWithAnimated:(BOOL)animated;
 

@@ -1,0 +1,14 @@
+PODS:
+  - LvModelWindow (0.1.2)
+
+DEPENDENCIES:
+  - LvModelWindow (from `../`)
+
+EXTERNAL SOURCES:
+  LvModelWindow:
+    :path: ../
+
+SPEC CHECKSUMS:
+  LvModelWindow: 3f464907bc11b7c08ab57783fab76626a6ed925c
+
+COCOAPODS: 0.39.0

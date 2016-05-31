@@ -8,6 +8,25 @@
 
 #import "LvModelWindow.h"
 
+@interface LvModelWindowAnimationContext : NSObject <LvModelWindowContextAnimationing>
+
+/**
+ *  The view in which the animation should take place.
+ */
+@property (nonatomic) UIView *windowContainerView;
+
+@property (nonatomic, assign) BOOL fromVisible;
+
+@property (nonatomic, assign) BOOL toVisible;
+
+@property (nonatomic, copy) void(^completeAnimationBlock)(BOOL didComplete);
+
+@end
+
+@implementation LvModelWindowAnimationContext
+
+@end
+
 @interface LvModelWindowRootVC : UIViewController
 
 @property (nonatomic, readonly) BOOL customPrefersStatusBarHidden;
@@ -179,23 +198,16 @@
     
     _window.hidden = NO;
     
-    if (animated) {
-        [UIView animateWithDuration:.3 animations:^{
-            if ([self.modelWindowDelegate respondsToSelector:@selector(showAnimations:)]) {
-                void(^animations)() = [self.modelWindowDelegate showAnimations:self];
-                if (animations) {
-                    animations();
-                }
-            }
-        } completion:^(BOOL finished){
-            if ([self.modelWindowDelegate respondsToSelector:@selector(showCompletion:)]) {
-                void(^showCompletion)() = [self.modelWindowDelegate showCompletion:self];
-                if (showCompletion) {
-                    showCompletion();
-                }
-            }
+    if (animated && self.modelWindowAnimation) {
+        
+        LvModelWindowAnimationContext *animationCtx = [[LvModelWindowAnimationContext alloc]init];
+        animationCtx.windowContainerView = self.windowRootView;
+        animationCtx.fromVisible = NO;
+        animationCtx.toVisible = YES;
+        animationCtx.completeAnimationBlock = ^(BOOL didComplete){
             [self didShow];
-        }];
+        };
+        [self.modelWindowAnimation animate:animationCtx];
     } else {
         [self didShow];
     }
@@ -209,35 +221,24 @@
     }
 }
 
-/**
- *  消失
- */
 - (void)dismissWithAnimated:(BOOL)animated
 {
     if (![self showing]) {
         return;
     }
     
-    if(animated){
-        [UIView animateWithDuration:.3 animations:^{
-            if ([self.modelWindowDelegate respondsToSelector:@selector(dismissAnimations:)]) {
-                void(^animations)() = [self.modelWindowDelegate dismissAnimations:self];
-                if (animations) {
-                    animations();
-                }
-            }
-        } completion:^(BOOL finished){
-            if ([self.modelWindowDelegate respondsToSelector:@selector(showCompletion:)]) {
-                void(^dismissCompletion)() = [self.modelWindowDelegate dismissCompletion:self];
-                if (dismissCompletion) {
-                    dismissCompletion();
-                }
-            }
+    if (animated && self.modelWindowAnimation) {
+        
+        LvModelWindowAnimationContext *animationCtx = [[LvModelWindowAnimationContext alloc]init];
+        animationCtx.windowContainerView = self.windowRootView;
+        animationCtx.fromVisible = YES;
+        animationCtx.toVisible = NO;
+        animationCtx.completeAnimationBlock = ^(BOOL didComplete){
             _window.hidden = YES;
             [self didDismiss];
-        }];
-    }
-    else{
+        };
+        [self.modelWindowAnimation animate:animationCtx];
+    } else {
         _window.hidden = YES;
         [self didDismiss];
     }

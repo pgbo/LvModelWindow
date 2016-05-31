@@ -21,6 +21,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		98D05BCA1CFD391200DF8A28 /* DefaultModelWindowAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D05BC91CFD391200DF8A28 /* DefaultModelWindowAnimation.m */; };
 		A5D10D411DE56E53F1B8CD84 /* Pods_LvModelWindow_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE8A662D84E751FF332BADE /* Pods_LvModelWindow_Tests.framework */; };
 		E7B0C811BD0C545F092F9210 /* Pods_LvModelWindow_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E32726F311B301161715CC /* Pods_LvModelWindow_Example.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,8 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		98D05BC81CFD391200DF8A28 /* DefaultModelWindowAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultModelWindowAnimation.h; sourceTree = "<group>"; };
+		98D05BC91CFD391200DF8A28 /* DefaultModelWindowAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultModelWindowAnimation.m; sourceTree = "<group>"; };
 		A3E32726F311B301161715CC /* Pods_LvModelWindow_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LvModelWindow_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB9CFA3CA43E3F8EF93F4E5 /* Pods-LvModelWindow_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LvModelWindow_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LvModelWindow_Example/Pods-LvModelWindow_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C1C7988A23240163683D1E74 /* LvModelWindow.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LvModelWindow.podspec; path = ../LvModelWindow.podspec; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 				6003F5A6195388D20070C39A /* LvViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				98D05BC81CFD391200DF8A28 /* DefaultModelWindowAnimation.h */,
+				98D05BC91CFD391200DF8A28 /* DefaultModelWindowAnimation.m */,
 			);
 			name = "Example for LvModelWindow";
 			path = LvModelWindow;
@@ -392,6 +397,7 @@
 			files = (
 				6003F59E195388D20070C39A /* LvAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* LvViewController.m in Sources */,
+				98D05BCA1CFD391200DF8A28 /* DefaultModelWindowAnimation.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

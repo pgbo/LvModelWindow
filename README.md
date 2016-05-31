@@ -7,25 +7,22 @@
 
 ## 简介
 
-通过LvModelWindow能够轻易实现任意弹出视图，将你想要弹出的视图add到它的windowRootView里，通过modelWindowDelegate设置好show和dismiss细节，即可构建弹出视图
+通过LvModelWindow能够轻易实现任意自定义视图、任意自定义动画。LvModelWindow是一个弹出视图的wrapper Window，可添加自定义视图、自定义动画，支持StatusBar隐藏，支持屏幕旋转。
 
 ## 安装
 ### cocoapods
 将下面的语句加入到你的Podfile：
 ```ruby
-pod "LvModelWindow", :git => "https://github.com/pgbo/LvModelWindow.git"
+pod "LvModelWindow"
 ```
-
-### 手动安装
-拷贝并添加或推拽LvModelWindow目录到你的项目目录里即可。
 
 ## 使用
 ### 初始化
 ```` objective-c
-_modelWindow = [[LvModelWindow alloc]initWithPreferStatusBarHidden:YES supportedOrientationPortrait:NO supportedOrientationPortraitUpsideDown:NO supportedOrientationLandscapeLeft:NO supportedOrientationLandscapeRight:NO];
+_modelWindow = [[LvModelWindow alloc]initWithPreferStatusBarHidden:NO preferStatusBarStyle:UIStatusBarStyleLightContent supportedOrientationPortrait:NO supportedOrientationPortraitUpsideDown:NO supportedOrientationLandscapeLeft:NO supportedOrientationLandscapeRight:NO];
 _modelWindow.modelWindowDelegate = self;
 ````
-### 添加一个视图到Window上，举例：添加一个Labael
+### 添加自定义视图到 Window 上，举例：添加一个 UILabel
 ```` objective-c
 UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 100, CGRectGetWidth(self.view.bounds), 64)];
 [_modelWindow.windowRootView addSubview:label];
@@ -38,6 +35,16 @@ label.textAlignment = NSTextAlignmentCenter;
 
 label.userInteractionEnabled = YES;
 [label addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissModelWindow)]];
+
+### 设置动画实体，举例：添加一个 DefaultModelWindowAnimation
+_modelWindowAnimation = ({
+    DefaultModelWindowAnimation *animation = [[DefaultModelWindowAnimation alloc]init];
+    animation.touchBackgroudView = _modelWindow.windowRootView;
+    animation.contentView = label;
+    animation;
+});
+_modelWindow.modelWindowAnimation = _modelWindowAnimation;
+
 ````
 
 ## Author
