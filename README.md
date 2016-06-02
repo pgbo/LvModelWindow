@@ -37,13 +37,12 @@ label.userInteractionEnabled = YES;
 [label addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissModelWindow)]];
 
 ### 设置动画实体，举例：添加一个 DefaultModelWindowAnimation
-_modelWindowAnimation = ({
+_modelWindow.modelWindowAnimation = ({
     DefaultModelWindowAnimation *animation = [[DefaultModelWindowAnimation alloc]init];
     animation.touchBackgroudView = _modelWindow.windowRootView;
     animation.contentView = label;
     animation;
 });
-_modelWindow.modelWindowAnimation = _modelWindowAnimation;
 
 ````
 
