@@ -49,7 +49,7 @@
 /**
  *  指定动画
  */
-@property (nonatomic, weak) id<LvModelWindowAnimating> modelWindowAnimation;
+@property (nonatomic, strong) id<LvModelWindowAnimating> modelWindowAnimation;
 
 - (instancetype)initWithPreferStatusBarHidden:(BOOL)preferStatusBarHidden
                          preferStatusBarStyle:(UIStatusBarStyle)preferStatusBarStyle

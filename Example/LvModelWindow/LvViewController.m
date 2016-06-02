@@ -13,7 +13,6 @@
 @interface LvViewController () <LvModelWindowDelegate>
 
 @property (nonatomic) LvModelWindow *modelWindow;
-@property (nonatomic) id<LvModelWindowAnimating> modelWindowAnimation;
 
 @end
 
@@ -50,14 +49,12 @@
         label.userInteractionEnabled = YES;
         [label addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissModelWindow)]];
         
-        _modelWindowAnimation = ({
+        _modelWindow.modelWindowAnimation = ({
             DefaultModelWindowAnimation *animation = [[DefaultModelWindowAnimation alloc]init];
             animation.touchBackgroudView = _modelWindow.windowRootView;
             animation.contentView = label;
             animation;
         });
-        
-        _modelWindow.modelWindowAnimation = _modelWindowAnimation;
     }
     return _modelWindow;
 }
