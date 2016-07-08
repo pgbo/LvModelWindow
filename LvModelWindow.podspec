@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "LvModelWindow"
-  s.version          = "0.1.3"
+  s.version          = "0.1.4"
   s.summary          = "LvModelWindow是一个弹出视图的wrapper Window，可添加自定义视图、自定义动画，支持StatusBar隐藏，支持屏幕旋转。"
   s.description      = <<-DESC
                        通过LvModelWindow能够轻易实现任意自定义视图、任意自定义动画。LvModelWindow是一个弹出视图的wrapper Window，可添加自定义视图、自定义动画，支持StatusBar隐藏，支持屏幕旋转。
@@ -24,9 +24,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'LvModelWindow' => ['Pod/Assets/*.png']
-  }
 
   s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
