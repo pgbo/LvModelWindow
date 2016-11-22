@@ -34,15 +34,15 @@
 - (LvModelWindow *)modelWindow
 {
     if (!_modelWindow) {
-        _modelWindow = [[LvModelWindow alloc]initWithPreferStatusBarHidden:NO preferStatusBarStyle:UIStatusBarStyleLightContent supportedOrientationPortrait:NO supportedOrientationPortraitUpsideDown:NO supportedOrientationLandscapeLeft:NO supportedOrientationLandscapeRight:NO];
+        _modelWindow = [[LvModelWindow alloc]initWithPreferStatusBarHidden:NO preferStatusBarStyle:UIStatusBarStyleLightContent supportedOrientationPortrait:NO supportedOrientationPortraitUpsideDown:NO supportedOrientationLandscapeLeft:NO supportedOrientationLandscapeRight:NO windowEdgeInsets:UIEdgeInsetsMake(40, 10, 100, 10)];
         _modelWindow.modelWindowDelegate = self;
         
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 100, CGRectGetWidth(self.view.bounds), 64)];
         [_modelWindow.windowRootView addSubview:label];
-        _modelWindow.windowRootView.backgroundColor = [UIColor blackColor];
+        _modelWindow.windowRootView.backgroundColor = [UIColor redColor];
         
         label.text = @"😄我显示出来了, 再点我就会消失";
-        label.backgroundColor = [UIColor whiteColor];
+        label.backgroundColor = [UIColor blueColor];
         label.textColor = [UIColor blackColor];
         label.textAlignment = NSTextAlignmentCenter;
         

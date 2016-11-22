@@ -151,6 +151,17 @@
             supportedOrientationLandscapeLeft:(BOOL)supportedOrientationLandscapeLeft
            supportedOrientationLandscapeRight:(BOOL)supportedOrientationLandscapeRight
 {
+    
+}
+
+- (instancetype)initWithPreferStatusBarHidden:(BOOL)preferStatusBarHidden
+                         preferStatusBarStyle:(UIStatusBarStyle)preferStatusBarStyle
+                 supportedOrientationPortrait:(BOOL)supportedOrientationPortrait
+       supportedOrientationPortraitUpsideDown:(BOOL)supportedOrientationPortraitUpsideDown
+            supportedOrientationLandscapeLeft:(BOOL)supportedOrientationLandscapeLeft
+           supportedOrientationLandscapeRight:(BOOL)supportedOrientationLandscapeRight
+                             windowEdgeInsets:(UIEdgeInsets)windowEdgeInsets
+{
     if (self = [super init]) {
         _preferStatusBarHidden = preferStatusBarHidden;
         _preferStatusBarStyle = preferStatusBarStyle;
@@ -158,6 +169,7 @@
         _supportedOrientationPortraitUpsideDown = supportedOrientationPortraitUpsideDown;
         _supportedOrientationLandscapeLeft = supportedOrientationLandscapeLeft;
         _supportedOrientationLandscapeRight = supportedOrientationLandscapeRight;
+        _windowEdgeInsets = windowEdgeInsets;
         [self setupModelWindow];
     }
     return self;
@@ -165,7 +177,12 @@
 
 - (void)setupModelWindow
 {
-    _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    
+    CGRect windowFrame = CGRectMake(_windowEdgeInsets.left, _windowEdgeInsets.top, screenSize.width - (_windowEdgeInsets.left + _windowEdgeInsets.right), screenSize.height - (_windowEdgeInsets.top + _windowEdgeInsets.bottom));
+    
+    _window = [[UIWindow alloc]initWithFrame:windowFrame];
     _window.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     
     _windowRootVC = [[LvModelWindowRootVC alloc]initWithPrefersStatusBarHidden:_preferStatusBarHidden
