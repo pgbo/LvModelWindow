@@ -243,6 +243,7 @@
         
         backgroudView.userInteractionEnabled = YES;
         self.backgroudViewTapToDismissGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backgroudViewToDismiss:)];
+        [backgroudView addGestureRecognizer:self.backgroudViewTapToDismissGesture];
     }
 }
 
