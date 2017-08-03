@@ -15,7 +15,7 @@
 /**
  *  Asks your animator object for the duration (in seconds) of the animation.
  *
- *  @param animationContext animationContext
+ *  @param animationContext Context for animation
  *
  *  @return The duration, in seconds, of your custom transition animation.
  */
@@ -24,7 +24,7 @@
 /**
  *  Tells your animator object to perform the animations.
  *
- *  @param animationContext
+ *  @param animationContext Context for animation
  */
 - (void)animate:(id<LvModelWindowContextAnimationing>)animationContext;
 
