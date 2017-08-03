@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41E3E2E305B2B9BEB3DE7AB4 /* Pods_LvModelWindow_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B80D3A73C39B6207BF13334 /* Pods_LvModelWindow_Example.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -20,10 +21,9 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		6B1022AD4DF7E47B408FAFC4 /* Pods_LvModelWindow_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCDD291BBFD2DC44855BADF /* Pods_LvModelWindow_Tests.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		98D05BCA1CFD391200DF8A28 /* DefaultModelWindowAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D05BC91CFD391200DF8A28 /* DefaultModelWindowAnimation.m */; };
-		A5D10D411DE56E53F1B8CD84 /* Pods_LvModelWindow_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE8A662D84E751FF332BADE /* Pods_LvModelWindow_Tests.framework */; };
-		E7B0C811BD0C545F092F9210 /* Pods_LvModelWindow_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E32726F311B301161715CC /* Pods_LvModelWindow_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		479CB33EDB8D34CF5DD6E4B6 /* Pods-LvModelWindow_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LvModelWindow_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LvModelWindow_Tests/Pods-LvModelWindow_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		494904A446703222B5E8DB52 /* Pods-LvModelWindow_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LvModelWindow_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LvModelWindow_Tests/Pods-LvModelWindow_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		3DCDD291BBFD2DC44855BADF /* Pods_LvModelWindow_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LvModelWindow_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* LvModelWindow_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LvModelWindow_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,15 +57,16 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		60F2CD1D7178FF6D888D6438 /* Pods-LvModelWindow_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LvModelWindow_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LvModelWindow_Example/Pods-LvModelWindow_Example.release.xcconfig"; sourceTree = "<group>"; };
+		6B80D3A73C39B6207BF13334 /* Pods_LvModelWindow_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LvModelWindow_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		98D05BC81CFD391200DF8A28 /* DefaultModelWindowAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultModelWindowAnimation.h; sourceTree = "<group>"; };
 		98D05BC91CFD391200DF8A28 /* DefaultModelWindowAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultModelWindowAnimation.m; sourceTree = "<group>"; };
-		A3E32726F311B301161715CC /* Pods_LvModelWindow_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LvModelWindow_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAB9CFA3CA43E3F8EF93F4E5 /* Pods-LvModelWindow_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LvModelWindow_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LvModelWindow_Example/Pods-LvModelWindow_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C1C7988A23240163683D1E74 /* LvModelWindow.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LvModelWindow.podspec; path = ../LvModelWindow.podspec; sourceTree = "<group>"; };
-		D7E74ACE38D50F02AF227A09 /* Pods-LvModelWindow_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LvModelWindow_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LvModelWindow_Example/Pods-LvModelWindow_Example.release.xcconfig"; sourceTree = "<group>"; };
+		C2791298C0527C9D8A6335DA /* Pods-LvModelWindow_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LvModelWindow_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LvModelWindow_Tests/Pods-LvModelWindow_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA32CEA4D95E1E81C4F5E082 /* Pods-LvModelWindow_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LvModelWindow_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LvModelWindow_Tests/Pods-LvModelWindow_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D21BAD20E80F085BEF0B691E /* Pods-LvModelWindow_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LvModelWindow_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LvModelWindow_Example/Pods-LvModelWindow_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DDAF58A9BE82492CFAE53DB3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		DFE8A662D84E751FF332BADE /* Pods_LvModelWindow_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LvModelWindow_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5C8BC3270F4971FF2678E74 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,7 +78,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				E7B0C811BD0C545F092F9210 /* Pods_LvModelWindow_Example.framework in Frameworks */,
+				41E3E2E305B2B9BEB3DE7AB4 /* Pods_LvModelWindow_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				A5D10D411DE56E53F1B8CD84 /* Pods_LvModelWindow_Tests.framework in Frameworks */,
+				6B1022AD4DF7E47B408FAFC4 /* Pods_LvModelWindow_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +104,7 @@
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
-				81230AC3A7248F908872E9B5 /* Pods */,
+				9D6832869612CF1CA7D17A9A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,8 +124,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				A3E32726F311B301161715CC /* Pods_LvModelWindow_Example.framework */,
-				DFE8A662D84E751FF332BADE /* Pods_LvModelWindow_Tests.framework */,
+				6B80D3A73C39B6207BF13334 /* Pods_LvModelWindow_Example.framework */,
+				3DCDD291BBFD2DC44855BADF /* Pods_LvModelWindow_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -187,13 +187,13 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		81230AC3A7248F908872E9B5 /* Pods */ = {
+		9D6832869612CF1CA7D17A9A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BAB9CFA3CA43E3F8EF93F4E5 /* Pods-LvModelWindow_Example.debug.xcconfig */,
-				D7E74ACE38D50F02AF227A09 /* Pods-LvModelWindow_Example.release.xcconfig */,
-				479CB33EDB8D34CF5DD6E4B6 /* Pods-LvModelWindow_Tests.debug.xcconfig */,
-				494904A446703222B5E8DB52 /* Pods-LvModelWindow_Tests.release.xcconfig */,
+				D21BAD20E80F085BEF0B691E /* Pods-LvModelWindow_Example.debug.xcconfig */,
+				60F2CD1D7178FF6D888D6438 /* Pods-LvModelWindow_Example.release.xcconfig */,
+				C2791298C0527C9D8A6335DA /* Pods-LvModelWindow_Tests.debug.xcconfig */,
+				CA32CEA4D95E1E81C4F5E082 /* Pods-LvModelWindow_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -205,12 +205,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "LvModelWindow_Example" */;
 			buildPhases = (
-				C61E5E6C4F4EDD4E4F4662C1 /* Check Pods Manifest.lock */,
+				AC434216A599E1D398056CA1 /* [CP] Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				DCC11A6784B90611574DD8A5 /* Embed Pods Frameworks */,
-				7D687338C37495405C6BB1D3 /* Copy Pods Resources */,
+				D560E5CCF668A581280D8AFA /* [CP] Embed Pods Frameworks */,
+				5793713739EA3D0F27CDA1E7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,12 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "LvModelWindow_Tests" */;
 			buildPhases = (
-				DDA7C7DCFFFD083BF865FF55 /* Check Pods Manifest.lock */,
+				727851CF340A6FD1C35252B5 /* [CP] Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				2D9F40258163C52E5EF41C86 /* Embed Pods Frameworks */,
-				F471DF5B35462B090046C9D4 /* Copy Pods Resources */,
+				E1AE2C49C962AB2B65C92C43 /* [CP] Embed Pods Frameworks */,
+				B66A638E8F9001717DA31E13 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,6 +252,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = pgbo;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						ProvisioningStyle = Manual;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -298,29 +301,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2D9F40258163C52E5EF41C86 /* Embed Pods Frameworks */ = {
+		5793713739EA3D0F27CDA1E7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LvModelWindow_Tests/Pods-LvModelWindow_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7D687338C37495405C6BB1D3 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,29 +316,59 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LvModelWindow_Example/Pods-LvModelWindow_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C61E5E6C4F4EDD4E4F4662C1 /* Check Pods Manifest.lock */ = {
+		727851CF340A6FD1C35252B5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		DCC11A6784B90611574DD8A5 /* Embed Pods Frameworks */ = {
+		AC434216A599E1D398056CA1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B66A638E8F9001717DA31E13 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LvModelWindow_Tests/Pods-LvModelWindow_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D560E5CCF668A581280D8AFA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,34 +376,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LvModelWindow_Example/Pods-LvModelWindow_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DDA7C7DCFFFD083BF865FF55 /* Check Pods Manifest.lock */ = {
+		E1AE2C49C962AB2B65C92C43 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F471DF5B35462B090046C9D4 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LvModelWindow_Tests/Pods-LvModelWindow_Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LvModelWindow_Tests/Pods-LvModelWindow_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -514,37 +517,43 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BAB9CFA3CA43E3F8EF93F4E5 /* Pods-LvModelWindow_Example.debug.xcconfig */;
+			baseConfigurationReference = D21BAD20E80F085BEF0B691E /* Pods-LvModelWindow_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LvModelWindow/LvModelWindow-Prefix.pch";
 				INFOPLIST_FILE = "LvModelWindow/LvModelWindow-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7E74ACE38D50F02AF227A09 /* Pods-LvModelWindow_Example.release.xcconfig */;
+			baseConfigurationReference = 60F2CD1D7178FF6D888D6438 /* Pods-LvModelWindow_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LvModelWindow/LvModelWindow-Prefix.pch";
 				INFOPLIST_FILE = "LvModelWindow/LvModelWindow-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 479CB33EDB8D34CF5DD6E4B6 /* Pods-LvModelWindow_Tests.debug.xcconfig */;
+			baseConfigurationReference = C2791298C0527C9D8A6335DA /* Pods-LvModelWindow_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -567,7 +576,7 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 494904A446703222B5E8DB52 /* Pods-LvModelWindow_Tests.release.xcconfig */;
+			baseConfigurationReference = CA32CEA4D95E1E81C4F5E082 /* Pods-LvModelWindow_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

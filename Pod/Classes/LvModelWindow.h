@@ -2,7 +2,7 @@
 //  LvModelWindow.h
 //  LvDemos
 //
-//  Created by 彭光波 on 15-2-3.
+//  Created by guangbool on 15-2-3.
 //
 //
 
@@ -54,6 +54,21 @@
  *  指定动画
  */
 @property (nonatomic, strong) id<LvModelWindowAnimating> modelWindowAnimation;
+
+
+/**
+ 背景视图。默认为`黑色 alpha:0.7` 的视图
+ 
+ 它和 `windowRootView` 四周对齐
+ */
+@property (nonatomic) UIView *backgroudView;
+
+/**
+ 背景视图的点击隐藏 window 的手势。所有设置的背景视图都会添加该手势，可以通过设置 `enabled` 启用或关闭该手势。
+ 
+ 以动画方式隐藏 window
+ */
+@property (nonatomic, readonly) UITapGestureRecognizer *backgroudViewTapToDismissGesture;
 
 - (instancetype)init NS_UNAVAILABLE;
 

@@ -2,7 +2,7 @@
 //  LvModelWindow.m
 //  LvDemos
 //
-//  Created by 彭光波 on 15-2-3.
+//  Created by guangbool on 15-2-3.
 //
 //
 
@@ -35,6 +35,8 @@
 @property (nonatomic, readonly) BOOL supportedOrientationPortraitUpsideDown;
 @property (nonatomic, readonly) BOOL supportedOrientationLandscapeLeft;
 @property (nonatomic, readonly) BOOL supportedOrientationLandscapeRight;
+
+@property (nonatomic) UITapGestureRecognizer *backgroudViewTapToDismissGesture;
 
 - (instancetype)initWithPrefersStatusBarHidden:(BOOL)prefersStatusBarHidden
                           preferStatusBarStyle:(UIStatusBarStyle)preferStatusBarStyle
@@ -124,11 +126,13 @@
 
 @end
 
-
 @interface LvModelWindow ()
 
 @property (nonatomic) UIWindow *window;
 @property (nonatomic) LvModelWindowRootVC *windowRootVC;
+
+@property (nonatomic) UIView *defaultBackgroudView;
+@property (nonatomic) UITapGestureRecognizer *backgroudViewTapToDismissGesture;
 
 @end
 
@@ -141,7 +145,8 @@
                   supportedOrientationPortrait:YES
         supportedOrientationPortraitUpsideDown:YES
              supportedOrientationLandscapeLeft:YES
-            supportedOrientationLandscapeRight:YES];
+            supportedOrientationLandscapeRight:YES
+                              windowEdgeInsets:UIEdgeInsetsZero];
 }
 
 - (instancetype)initWithPreferStatusBarHidden:(BOOL)preferStatusBarHidden
@@ -151,7 +156,13 @@
             supportedOrientationLandscapeLeft:(BOOL)supportedOrientationLandscapeLeft
            supportedOrientationLandscapeRight:(BOOL)supportedOrientationLandscapeRight
 {
-    
+    return [self initWithPreferStatusBarHidden:preferStatusBarHidden
+                          preferStatusBarStyle:preferStatusBarStyle
+                  supportedOrientationPortrait:supportedOrientationPortrait
+        supportedOrientationPortraitUpsideDown:supportedOrientationPortraitUpsideDown
+             supportedOrientationLandscapeLeft:supportedOrientationLandscapeLeft
+            supportedOrientationLandscapeRight:supportedOrientationLandscapeRight
+                              windowEdgeInsets:UIEdgeInsetsZero];
 }
 
 - (instancetype)initWithPreferStatusBarHidden:(BOOL)preferStatusBarHidden
@@ -178,7 +189,6 @@
 - (void)setupModelWindow
 {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
-    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     
     CGRect windowFrame = CGRectMake(_windowEdgeInsets.left, _windowEdgeInsets.top, screenSize.width - (_windowEdgeInsets.left + _windowEdgeInsets.right), screenSize.height - (_windowEdgeInsets.top + _windowEdgeInsets.bottom));
     
@@ -192,6 +202,19 @@
                                              supportedOrientationLandscapeLeft:_supportedOrientationLandscapeLeft
                                             supportedOrientationLandscapeRight:_supportedOrientationLandscapeRight];
     _window.rootViewController = _windowRootVC;
+    _window.rootViewController.view.backgroundColor = [UIColor clearColor];
+    
+    // Set default backgroud view
+    [self setBackgroudView:self.defaultBackgroudView];
+}
+
+- (UIView *)defaultBackgroudView
+{
+    if (!_defaultBackgroudView) {
+        _defaultBackgroudView = [UIView new];
+        _defaultBackgroudView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.7];
+    }
+    return _defaultBackgroudView;
 }
 
 - (UIView *)windowRootView
@@ -204,6 +227,28 @@
     return _windowRootVC;
 }
 
+- (void)setBackgroudView:(UIView *)backgroudView {
+    if (_backgroudView == backgroudView) return;
+    
+    [_backgroudView removeFromSuperview];
+    _backgroudViewTapToDismissGesture = nil;
+    
+    _backgroudView = backgroudView;
+    
+    if (backgroudView) {
+        backgroudView.translatesAutoresizingMaskIntoConstraints = YES;
+        backgroudView.frame = self.windowRootView.bounds;
+        backgroudView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        [self.windowRootView insertSubview:backgroudView atIndex:0];
+        
+        backgroudView.userInteractionEnabled = YES;
+        self.backgroudViewTapToDismissGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backgroudViewToDismiss:)];
+    }
+}
+
+- (void)backgroudViewToDismiss:(UITapGestureRecognizer *)tap {
+    [self dismissWithAnimated:YES];
+}
 
 /**
  *  显示

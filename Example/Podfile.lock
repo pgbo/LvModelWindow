@@ -1,5 +1,5 @@
 PODS:
-  - LvModelWindow (0.1.2)
+  - LvModelWindow (0.1.6)
 
 DEPENDENCIES:
   - LvModelWindow (from `../`)
@@ -9,6 +9,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  LvModelWindow: 3f464907bc11b7c08ab57783fab76626a6ed925c
+  LvModelWindow: 6c83edec682e64e9f516addbc715c08021a127df
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 30a1e5c401441fdfd0e90aa081883ee07ce129f5
+
+COCOAPODS: 1.2.1
